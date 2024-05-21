@@ -41,5 +41,7 @@ class Program
         // Деление комплексных чисел
         ComplexNumber quotient = complex1 / complex2;
         Console.WriteLine($"Частное: {quotient}");
+
+        // Обработка исключений
     }
 }
