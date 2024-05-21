@@ -67,10 +67,20 @@ namespace ComplexNumber
         // Обработка некорректного ввода
         public static ComplexNumber Parse(string input)
         {
-            string[] parts = input.Split('+', 'i');
-            double real = double.Parse(parts[0]);
-            double imaginary = double.Parse(parts[1]);
-            return new ComplexNumber(real, imaginary);
+            try
+            {
+                string[] parts = input.Split('+', 'i');
+                if (parts.Length != 2)
+                    throw new FormatException("Неверный формат строки.");
+                double real = double.Parse(parts[0]);
+                double imaginary = double.Parse(parts[1]);
+                return new ComplexNumber(real, imaginary);
+            }
+            catch (Exception ex)
+            {
+                throw new FormatException("Неверный формат строки.", ex);
+            }
+
         }
     }
 
