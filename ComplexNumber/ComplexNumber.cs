@@ -64,6 +64,7 @@ namespace ComplexNumber
         }
 
         // Статический метод для получения комплексного числа из строки
+        // Обработка некорректного ввода
         public static ComplexNumber Parse(string input)
         {
             string[] parts = input.Split('+', 'i');
